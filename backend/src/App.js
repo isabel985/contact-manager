@@ -1,12 +1,13 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import Layout from './components/Layout';
 import routes from './routes';
 import NoMatch from './components/NoMatch';
 
 const App = () => {
   return (
-    <Fragment>
+    <Layout>
       <Switch>
         {routes.map(({ path, exact, component: Component, ...rest }) => (
           <Route
@@ -25,7 +26,7 @@ const App = () => {
           render={props => <NoMatch {...props} />}
         />
       </Switch>
-    </Fragment>
+    </Layout>
   )
 }
 
